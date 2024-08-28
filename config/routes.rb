@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "static_pages/home"
+  root "static_pages#home"
   get "static_pages/help"
   get "static_pages/about"
   resources :microposts
@@ -13,7 +13,4 @@ Rails.application.routes.draw do
   # Render dynamic PWA files from app/views/pwa/*
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-
-  # Defines the root path route ("/")
-  root "users#index"
 end
